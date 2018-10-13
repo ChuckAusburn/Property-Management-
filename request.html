@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Linking CSS Reset File -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- Linking CSS Style File -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
@@ -12,32 +14,37 @@
 <body>
 <div class="parentheader">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">EZIE ISAAC PROPERTIES</a>
+      <a class="navbar-brand" href="#";><strong>EZIE ISAAC PROPERTIES</strong></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link " href="request.html">Request Form</a>
+          <a class="nav-item nav-link " href="request.html"><strong>Request Form</strong></a>
         </div>
       </div>
     </nav>
 </div>
 
 <br>
-<br>
+ 
 
 <div class="container">
+  <div class="titleheader">
+  <p style= "font-size:30px";><strong >Tenant Maintenance Request</strong></p>
+  </div>
+<br>
   <div class="row">
-    <div id="accordion">
+      <div id="accordion">
       <div class="card">
-        <div class="card-header" id="headingOne">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Collapsible Group Item #1
-            </button>
-          </h5>
-        </div>
+        
+         
+            </button> <div class="form-group">
+                <label for="exampleInputEmail1"></label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Tenant Name">
+                <small id="emailHelp" class="form-text text-muted"></small>
+              </div>
+        
 
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
@@ -46,12 +53,19 @@
         </div>
       </div>
       <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Collapsible Group Item #2
-            </button>
-          </h5>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Address
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">3515 Keystone Ave,LA</a>
+            <a class="dropdown-item" href="#">3530 Hughes Ave,LA</a>
+            <a class="dropdown-item" href="#">3549 Hughes Ave,LA</a>
+            <a class="dropdown-item" href="#">3621 Bagley Ave,LA</a>
+            <a class="dropdown-item" href="#">10674 Holman Ave,LA</a>
+            <a class="dropdown-item" href="#">3867 College Ave,CC</a>
+            <a class="dropdown-item" href="#">1421 16th Street,SM</a>
+          </div>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
@@ -60,12 +74,41 @@
         </div>
       </div>
       <div class="card">
-        <div class="card-header" id="headingThree">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Collapsible Group Item #3
-            </button>
-          </h5>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Unit Number
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">1</a>
+            <a class="dropdown-item" href="#">2</a>
+            <a class="dropdown-item" href="#">3</a>
+            <a class="dropdown-item" href="#">4</a>
+            <a class="dropdown-item" href="#">5</a>
+            <a class="dropdown-item" href="#">6</a>
+            <a class="dropdown-item" href="#">7</a>
+            <a class="dropdown-item" href="#">8</a>
+            <a class="dropdown-item" href="#">9</a>
+            <a class="dropdown-item" href="#">10</a>
+            <a class="dropdown-item" href="#">11</a>
+            <a class="dropdown-item" href="#">12</a>
+            <a class="dropdown-item" href="#">13</a>
+            <a class="dropdown-item" href="#">14</a>
+            <a class="dropdown-item" href="#">15</a>
+            <a class="dropdown-item" href="#">16</a>
+            <a class="dropdown-item" href="#">17</a>
+            <a class="dropdown-item" href="#">18</a>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
         </div>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
           <div class="card-body">
@@ -76,7 +119,6 @@
     </div>
   </div>
   <br>
-  <br>
   <div class="row">
     <div class="col-lg-6">
       <form>
@@ -86,8 +128,8 @@
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <label for="exampleInputPassword1">Tenant Contact Number</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter contact number">
         </div>
       </form>
     </div>
@@ -96,7 +138,7 @@
 
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown button
+          Kitchen Issues
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">Action</a>
@@ -109,7 +151,7 @@
 
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown button
+          Bathroom Issues
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">Action</a>
@@ -122,7 +164,7 @@
 
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown button
+          Other Issues
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">Action</a>
@@ -164,7 +206,7 @@
   <br>
   <br>
   <div class="row">
-    <p>Email Submission</p>
+    <p>Description of Issue(s)</p>
   </div>
   <div class="row">
     <textarea rows="4" cols="50">
