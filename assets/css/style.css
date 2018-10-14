@@ -25,14 +25,14 @@ p {
 .container {
     padding-left: 0px;
     padding-right: 0px;
-}
+     }
 
 
 
 body {
-    background-image: url(../images/bananas.png);
+    
     margin-bottom: 60px;
-
+    
 }
 
 .mainheaderleft {
@@ -159,7 +159,6 @@ html {
 .rowmargin {
     margin-bottom: 2%;
 }
-
 
 
 .imgcontainer {
