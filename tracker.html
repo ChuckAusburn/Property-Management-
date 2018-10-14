@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Property-Management-Maintenance-Form`</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Linking CSS Reset File -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <!-- Linking CSS  File -->
+  <link rel="stylesheet" type="text/css" href="assets/css/tracker.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+</head>
+
+<body>
+  <div class="parentheader">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">EZIE ISAAC PROPERTIES</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link " href="request.html">Request Form</a>
+          <a class="nav-item nav-link " href="maintenance.html">Maintenance</a>
+          <a class="nav-item nav-link " href="tracker.html">Tracker</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <br>
+  <br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <table id="displayRequest" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Address</th>
+                        <th>Unit</th>
+                        <th>Issue Type</th>
+                        <th>Issuer Name</th>
+                        <th>Issuer Email</th>
+                        <th>Issuer Phone</th>
+                        <th>Created Date</th>
+                        <th>Issue Status</th>
+                        <th>Remove Issue</th>
+                    </tr>
+                </thead>
+                <tbody class="add-records">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Address</th>
+                        <th>Unit</th>
+                        <th>Issue Type</th>
+                        <th>Issuer Name</th>
+                        <th>Issuer Email</th>
+                        <th>Issuer Phone</th>
+                        <th>Created Date</th>
+                        <th>Issue Status</th>
+                        <th>Remove Issue</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+
+    <br><br>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <form id="contact-form">
+
+                <div class="messages"></div>
+
+                <div class="controls">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_name">Name *</label>
+                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your Name *"
+                                    required="required" data-error="Name is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_email">Email *</label>
+                                <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *"
+                                    required="required" data-error="Valid email is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Subject">Subject *</label>
+                                <input id="Subject" type="text" name="Subject" class="form-control" placeholder="Please enter your Subject"
+                                    required="required" data-error="Subject is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form_message">Message *</label>
+                                <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *"
+                                    rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-success" value="Send message">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-muted">
+                                <strong>*</strong> These fields are required.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+  <!-- LINK TO FIREBASE GOES HERE -->
+<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+<!-- Link to Moment.js should go here -->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+  <!-- Script -->
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBXxt23fhtW6YNk8iu_J2m9qg_ivp58RxY",
+            authDomain: "property-management-aa43d.firebaseapp.com",
+            databaseURL: "https://property-management-aa43d.firebaseio.com",
+            projectId: "property-management-aa43d",
+            storageBucket: "property-management-aa43d.appspot.com",
+            messagingSenderId: "272832416557"
+        };
+
+        firebase.initializeApp(config);
+
+        // Create a variable to reference the database.
+        var database = firebase.database();
+
+
+        $(document).on('change', '.status-dropdown', function () {
+            var selectedText = $(this).find("option:selected").attr('value');
+            console.log(selectedText)
+
+            // removes from database
+
+            var row_val = $(this).attr('row_val')
+            row_val = parseInt(row_val)
+
+            var abc = firebase.database().ref('/dummy_requests');
+            var key_to_delete = row_val;
+            var query = abc.orderByChild('fb_issueID').equalTo(key_to_delete);
+            query.on('child_added', function (snapshot) {
+                snapshot.ref.update({
+                    fb_issueStatus: selectedText
+                })
+            });
+        })
+
+
+        // Firebase watcher .on("child_added"
+        database.ref('/dummy_requests').on("child_added", function (snapshot) {
+            // storing the snapshot.val() in a variable for convenience
+            var sv = snapshot.val();
+
+
+            // Change the HTML to reflect
+
+            $(".add-records").append(
+                "<tr class='remove-tr' role='row'>" +
+                "<td class='addressRow' row_val='" + sv.fb_issueID + "'>" + sv.fb_address + "</td>" +
+                "<td class='unitRow' row_val='" + sv.fb_issueID + "'>" + sv.fb_unit + "</td>" +
+                "<td class='issueTypeRow' row_val='" + sv.fb_issueID + "'>" + sv.fb_issueType + "</td>" +
+                "<td class='issuerNameRow' row_val='" + sv.fb_issueID + "'>" + sv.fb_issuerName + "</td>" +
+                "<td class='issuerEmailRow' row_val='" + sv.fb_issueID + "'>" + sv.fb_issuerEmail + "</td>" +
+                "<td class='issuerPhoneRow' row_val='" + sv.fb_issueID + "'>" + sv.fb_issuerPhone + "</td>" +
+                "<td class='createdDateRow' row_val='" + sv.fb_issueID + "'>" + moment(sv.fb_createdDate).format('MM/DD/YYYY') + "</td>" +
+                "<td class='issueStatusRow' row_val='" + sv.fb_issueID + "'>" +
+                "<select class='form-control status-dropdown' row_val='" + sv.fb_issueID + "'>" +
+                "<option class='rowval' fb_value=" + sv.fb_issueStatus + " value='0'>Pending Review</option>" +
+                "<option class='rowval' fb_value=" + sv.fb_issueStatus + "  value='1'>Resolved</option>" +
+                "<option class='rowval' fb_value=" + sv.fb_issueStatus + "  value='2'>Rejected</option>" +
+                "<option class='rowval' fb_value=" + sv.fb_issueStatus + "  value='3'>Confirmed</option>" +
+                "</select>" +
+                "</td>" +
+                "<td>" + "<button row_val='" + sv.fb_issueID + "' class='btn btn-primary remove-record'>Remove</button" + "</td>" +
+                "</tr>"
+            );
+
+
+
+            $.expr[':'].attrEqual = function (obj, index, meta, stack) {
+                var attrs = meta[3].split(" ");
+                return $(obj).attr(attrs[1]) == $(obj).attr(attrs[0]);
+            };
+
+            $('.rowval:attrEqual(fb_value value)').attr('selected', 'selected')
+
+
+            // Handle the errors
+        }, function (errorObject) {
+            console.log("Errors handled: " + errorObject.code);
+        });
+
+
+        // runs with firebase
+        database.ref('/dummy_requests').on("value", function (value) {
+            $('#displayRequest').DataTable()
+        })
+
+
+        $(document).on('click', '.remove-record', function () {
+
+            // removes from database
+
+            var row_val = $(this).attr('row_val')
+            row_val = parseInt(row_val)
+
+            var abc = firebase.database().ref('/dummy_requests');
+            var key_to_delete = row_val;
+            var query = abc.orderByChild('fb_issueID').equalTo(key_to_delete);
+            query.on('child_added', function (snapshot) {
+                snapshot.ref.remove();
+            });
+
+            // removes row from front end
+            $(this).closest('.remove-tr').remove()
+
+        });
+
+    
+    $(document).on('click', 'tr', function () {
+       
+       
+
+        $("#form_name").val($(this).find($('.issuerNameRow')).text());
+        $("#form_email").val($(this).find($('.issuerEmailRow')).text());
+        $("#Subject").val($(this).find($('.addressRow')).text());
+
+        
+    });
+
+
+} );
+  </script>
+
+</body>
+
+</html>
