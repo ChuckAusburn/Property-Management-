@@ -11,6 +11,56 @@ $(document).ready(function() {
     firebase.initializeApp(config);
 
     var database = firebase.database();
+    $(document).on('click', '#submit-request-btn', function (event) {
+
+        event.preventDefault();
+        
+        var address = $("#selectAddress").val().trim();
+        var createdDate = 82739428;
+        var issueID = 1;
+        var issueType = $("#issueSelect").val();
+        var issuerEmail = $("#tenantEmail").val().trim();
+        var issuerName = $("#tenantName").val().trim();
+        var unit = $("#unitNumber").val().trim();
+        var enterHome = $("#checkbox").val().trim();
+        var issuerPhone = $("#tenantPhone").val().trim();
+        
+        
+        // logic to pull latest ID and increment by 1
+          database.ref('/issue_request').on("child_added", function (snapshot) {
+            // storing the snapshot.val() in a variable for convenience
+            var sv = snapshot.val();
+        
+            issueID = sv.fb_issueID;
+        
+            issueID++
+        
+          }, function (errorObject) {
+            console.log("Errors handled: " + errorObject.code);
+          });
+        
+        
+          // Code for handling the push
+          database.ref('/issue_request').push({
+            fb_address: address,
+            fb_createdDate: createdDate,
+            fb_issueID: issueID,
+            fb_issueType: issueType,
+            fb_issuerEmail: issuerEmail,
+            fb_issuerName: issuerName,
+            fb_unit: unit,
+            fb_enterHome: enterHome,
+            fb_issuerPhone: issuerPhone
+          });
+        
+          //Clear text on submission
+          $("#selectAddress").val("");
+          $("#issueSelect").val("");
+          $("#issuerEmail").val("");
+          $("#issuerName").val("");
+          $("#unitNumber").val("");
+          $("#checkbox").val("");
+        });
 
     //Submits email, password, location, and issue(s) to firebase
     $("#submitRequest").on("click", function(event) {
