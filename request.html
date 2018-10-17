@@ -30,24 +30,69 @@
  
 
 <div class="container">
-  <div class="titleheader">
-  <p style= "font-size:30px";><strong >Tenant Maintenance Request</strong></p>
-  </div>
-<br>
   <div class="row">
-      <div id="accordion">
-      <div class="card">
-        
-         
-            </button> <div class="form-group">
-                <label for="exampleInputEmail1"></label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Tenant Name">
-                <small id="emailHelp" class="form-text text-muted"></small>
-              </div>
-        
-
-              
+    <div class="titleheader">
+    <p style= "font-size:30px";><strong >Tenant Maintenance Request</strong></p>
+    </div>
+  </div>
+  <div class="row">
+    <form>
+      <div class="form-group">
+        <label for="tenantName"><strong>Tenant Name</strong></label>
+        <input type="text" class="form-control" id="tenantName" aria-describedby="tenantName" placeholder="Enter Tenant Name">
+        <small id="tenantNameID" class="form-text text-muted"></small>
       </div>
+      <div class="form-group">
+        <label for="tenantPhone"><strong>Tenant Phone</strong></label>
+        <input type="tel" class="form-control" id="tenantPhone" aria-describedby="tenantPhone" placeholder="Enter Tenant Phone">
+        <small id="tenantPhoneID" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+          <label for="exampleInputEmail1"><strong>Email Address</strong></label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="selectAddress">Select Address</label>
+              <select class="form-control" id="selectAddress">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <label for="unitNumber"><strong>Unit Number</strong></label>
+            <input type="number" class="form-control" id="unitNumber" aria-describedby="unitNumber" placeholder="Unit Number">
+            <small id="unitNumber" class="form-text text-muted"></small>
+          </div>
+        </div>
+    </form>
+  </div>
+  <div class="row">
+    <div class="card" style="width: 25rem;">
+      <img class="card-img-top" src="https://www.ydesignservices.com/wp-content/uploads/2016/07/Googlemap-600x551.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Property Manager Details</h5>
+        <p class="card-text">Manager Name: Blah</p>
+        <p class="card-text">Manager Number: 714-111-1234</p>
+        <p class="card-text">Manager Email: chuck@gmail.com</p>
+        <p class="card-text">Property Address: Blah</p>
+        <p class="card-text">City, State</p>
+        <p class="card-text">Zip Code</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+              
+</div>
       <div class="card">
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -113,11 +158,7 @@
   <div class="row">
     <div class="col-lg-6">
       <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1"><strong>Email address</strong></label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
+
         <div class="form-group">
           <label for="exampleInputPhone1"><strong>Tenant Contact Number</strong></label>
           <input type="phone" class="form-control" id="exampleInputPhone1" placeholder="Enter contact number">
@@ -149,7 +190,7 @@
   <div class="row">
     <button>Submit</button>
   </div>
-</div>
+</div> -->
 
 <!-- LINK TO FIREBASE GOES HERE -->
 <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
@@ -161,7 +202,8 @@
 
 $( document ).ready(function() {
 
-$('.collapse').collapse();
+function displayAddress() { document.getElementById("labelAddress").innerHTML=document.getElementById("displayAddress").value
+}
 
 
 });
