@@ -158,7 +158,7 @@
   <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
   <script type="text/javascript">
     (function(){
-        emailjs.init("user_o5NyDUb8RAcTgB5z0KVWs");
+        emailjs.init("user_rJiOFmAnMYDqcmwyIHGLD");
     })();
   </script>
 
@@ -321,7 +321,7 @@
         // Change to your service ID, or keep using the default service
         var myform = $("form#contact-form");
         var service_id = "default_service";
-        var template_id = "toclient";
+        var template_id = "trackeremailer";
 
         myform.find("button").text("Sending...");
         emailjs.sendForm(service_id,template_id,myform[0])
