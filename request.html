@@ -15,6 +15,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src ="assets/request.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhFk-q7bicA0ApJ7y3hNc2uLMvYnDre1w"></script>
 </head>
 
 <body>
@@ -66,15 +67,13 @@
               <div class="col">
                 <div class="form-group">
                   <label for="selectAddress"><strong>Select Address</strong></label>
-                  <select class="form-control" id="selectAddress">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                  <select class="form-control" id="selectAddress"> 
+                    <option disabled selected value="">Please select value</option>
                   </select>
                 </div>
               </div>
+          </div>
+          <div class = row>
               <div class="col">
                 <label for="unitNumber"><strong>Unit Number</strong></label>
                 <input type="number" class="form-control" id="unitNumber" aria-describedby="unitNumber" placeholder="Unit Number">
@@ -84,16 +83,9 @@
         </form>
       </div>
       <div class="row">
-        <div class="card" style="width: 25rem;">
-          <img class="card-img-top" src="https://www.ydesignservices.com/wp-content/uploads/2016/07/Googlemap-600x551.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Property Manager Details</h5>
-            <p class="card-text">Manager Name: Blah</p>
-            <p class="card-text">Manager Number: 714-111-1234</p>
-            <p class="card-text">Manager Email: chuck@gmail.com</p>
-            <p class="card-text">Property Address: Blah</p>
-            <p class="card-text">City, State</p>
-            <p class="card-text">Zip Code</p>
+        <div class="card" style="width: 600px;">
+          <div style="width:600px;height:300px" id="map"></div>
+          <div style="width:600px;height:300px" class="card-body" id= "managerInfo">
           </div>
         </div>
       </div>
@@ -109,16 +101,12 @@
             <textarea id="form_message" name="body" class="form-control" placeholder="Please describe your issue"></textarea>
             <div class="help-block with-errors"></div>
           </div>
-          <div class="form-group">
-            <label for="issueSelect">Select Issues (hold CTRL to select multiple)</label>
-            <select multiple class="form-control" id="issueSelect">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
+            <div class="form-group">
+              <label for="selectissue"><strong>Select issue</strong></label>
+              <select class="form-control" id="selectissue"> 
+                <option disabled selected value="">Please select value</option>
+              </select>
+            </div>
           <div class="form-check checkbox">
             <input type="checkbox" class="form-check-input" id="checkbox">
             <label class="form-check-label" for="checkbox">OK to Enter Home</label>
@@ -138,7 +126,10 @@
 
 <!-- LINK TO FIREBASE GOES HERE -->
 <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <!-- Script -->

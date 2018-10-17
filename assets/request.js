@@ -11,37 +11,33 @@ $(document).ready(function() {
     firebase.initializeApp(config);
 
     var database = firebase.database();
-    $(document).on('click', '#submit-request-btn', function (event) {
+ 
 
-        event.preventDefault();
-        
+    $(document).on('click', '#submit-request-btn', function (event) {
+        event.preventDefault();   
         var address = $("#selectAddress").val().trim();
         var createdDate = 82739428;
-        var issueID = 1;
-        var issueType = $("#issueSelect").val();
+        var issueID = 4;
+        var issueType = $("#selectissue").val();
         var issuerEmail = $("#tenantEmail").val().trim();
         var issuerName = $("#tenantName").val().trim();
+        var message = $("#form_message").val().trim();
         var unit = $("#unitNumber").val().trim();
         var enterHome = $("#checkbox").val().trim();
         var issuerPhone = $("#tenantPhone").val().trim();
         
-        
         // logic to pull latest ID and increment by 1
-          database.ref('/issue_request').on("child_added", function (snapshot) {
+        //   database.ref('/issue_request').on("child_added", function (snapshot) {
             // storing the snapshot.val() in a variable for convenience
-            var sv = snapshot.val();
+        //     var sv = snapshot.val();        
+        //     issueID = sv.fb_issueID;
         
-            issueID = sv.fb_issueID;
+        //     issueID++
         
-            issueID++
-        
-          }, function (errorObject) {
-            console.log("Errors handled: " + errorObject.code);
-          });
-        
-        
-          // Code for handling the push
-          database.ref('/issue_request').push({
+        //   }, function (errorObject) {
+        //     console.log("Errors handled: " + errorObject.code);
+        //   });
+        var postData = {
             fb_address: address,
             fb_createdDate: createdDate,
             fb_issueID: issueID,
@@ -50,41 +46,45 @@ $(document).ready(function() {
             fb_issuerName: issuerName,
             fb_unit: unit,
             fb_enterHome: enterHome,
-            fb_issuerPhone: issuerPhone
-          });
-        
+            fb_issuerPhone: issuerPhone,
+            fb_message: message,
+          }
+        var newPostKey = firebase.database().ref('/issue_request').push().key;
+        // Write the new post's data simultaneously in the posts list and the user's post list.
+        var updates = {};
+        updates['/issue_request/' + newPostKey] = postData;
+        console.log(updates)
+        firebase.database().ref().update(updates);
+       
           //Clear text on submission
           $("#selectAddress").val("");
-          $("#issueSelect").val("");
-          $("#issuerEmail").val("");
-          $("#issuerName").val("");
+          $("#selectissue").val("");
+          $("#tenantEmail").val("");
+          $("#tenantName").val("");
           $("#unitNumber").val("");
           $("#checkbox").val("");
-        });
-
-    //Submits email, password, location, and issue(s) to firebase
-    $("#submitRequest").on("click", function(event) {
-        event.preventDefault();
-        var tenantName = $("#tenantName").val().trim();
-        console.log(tenantName);
-        var email = $("#inputEmail").val().trim();
-        console.log(email);
-        var phoneNum = $("#inputPhoneNum").val().trim();
-        console.log(phoneNum);
+        $("#form_message").val("");
+        $("#tenantPhone").val("");
     });
 
 
     //Refers to the parent node("maintenance_issue") location in our database and returns a snapshot of its info
     database.ref('/maintenance_contact').on("child_added" , function(snapshot) {
         //Logging the value of the snapshot to see what it returns
-
-
+        var snap1 = snapshot.val();
         //Stores the value of the snapshot into html elements and displays them in the browser
         $("#selectAddress").append(
-           "<option addressval='"+snapshot.val().fb_addressInput+"'>" + snapshot.val().fb_addressInput + "</option>"
+           "<option addressval='"+snap1.fb_addressInput+"' fulladdressval='"+snap1.fb_addressInput+", "+ snap1.fb_cityInput+", "+snap1.fb_stateInput+"'>" + snapshot.val().fb_addressInput + "</option>"
         );
 
         }, // If any errors are experienced, log them to console.
+        function(errorObject) {
+        console.log("The read failed: " + errorObject.code);
+    });
+    database.ref('/maintenance_issue').on("child_added" , function(snapshot) {
+        $("#selectissue").append(
+           "<option issueval='"+snapshot.val().fb_issueInput+"'>" + snapshot.val().fb_issueInput + "</option>"
+        )}, // If any errors are experienced, log them to console.
         function(errorObject) {
         console.log("The read failed: " + errorObject.code);
     });
@@ -92,10 +92,13 @@ $(document).ready(function() {
 
     $(document).on('change', '#selectAddress', function () {
         var selectedaddress  = $(this).find("option:selected").attr('addressval');
+        var fulladdress = $(this).find("option:selected").attr('fulladdressval');
+        console.log(selectedaddress)
         var abc = firebase.database().ref('/maintenance_contact');
         var query = abc.orderByChild('fb_addressInput').equalTo(selectedaddress);
         query.on('child_added', function(snapshot){
             var snap = snapshot.val();
+            console.log(snap.fb_managerNameInput)
             $("#managerInfo").empty();
             $("#managerInfo").append(
             "<h5 class='card-title'> Property Manager Details </h5>" +
@@ -107,8 +110,51 @@ $(document).ready(function() {
             "<p class='card-text'>Zip Code: " + snap.fb_zipInput + "</p>"
         );
         });
-      });
 
-    $()
+        var addresssplit = fulladdress.split(" ");
+        var addressstring ="";
+        console.log(addresssplit)
+        for(var i=0;i<addresssplit.length;i++) {
+            if(i==addresssplit.length-1){
+            addressstring = addressstring+addresssplit[i]
+            } else {
+            addressstring = addressstring+addresssplit[i]+'+'
+            }
+        }
+
+        var querylink1 = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
+        // 1600+Amphitheatre+Parkway,+Mountain+View,+CA
+        var api = '&key=AIzaSyDhFk-q7bicA0ApJ7y3hNc2uLMvYnDre1w';
+        var queryURL = querylink1+addressstring+api;
+        console.log(queryURL)
+        var lata = 0;
+        var lnga = 0;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+        // After the data comes back from the API
+        .then(function(response) {
+            // Storing an array of results in the results variable
+            var results = response;
+            lata = results.results[0].geometry.location.lat;
+            lnga = results.results[0].geometry.location.lng;
+            console.log("inside"+lata+" "+lnga);
+        });
+
+        // Initialize and add the map
+        function initMap() {
+        // The location of Uluru
+        var uluru = {lat: lata, lng: lnga};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 10, center: uluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+
+        setTimeout(initMap, 560);
+    });
+
 
 });
