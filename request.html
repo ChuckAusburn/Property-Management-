@@ -60,14 +60,14 @@
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Address
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">3515 Keystone Ave,LA</a>
-            <a class="dropdown-item" href="#">3530 Hughes Ave,LA</a>
-            <a class="dropdown-item" href="#">3549 Hughes Ave,LA</a>
-            <a class="dropdown-item" href="#">3621 Bagley Ave,LA</a>
-            <a class="dropdown-item" href="#">10674 Holman Ave,LA</a>
-            <a class="dropdown-item" href="#">3867 College Ave,CC</a>
-            <a class="dropdown-item" href="#">1421 16th Street,SM</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="displayAddress">
+            <a class="dropdown-item" href="#"></a>
+            <a class="dropdown-item" href="#"></a>
+            <a class="dropdown-item" href="#"></a>
+            <a class="dropdown-item" href="#"></a>
+            <a class="dropdown-item" href="#"></a>
+            <a class="dropdown-item" href="#"></a>
+            <a class="dropdown-item" href="#"></a>
           </div>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -124,12 +124,12 @@
       <form>
         <div class="form-group">
           <label for="exampleInputEmail1"><strong>Email address</strong></label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
           <label for="exampleInputPhone1"><strong>Tenant Contact Number</strong></label>
-          <input type="phone" class="form-control" id="exampleInputPhone1" placeholder="Enter contact number">
+          <input type="phone" class="form-control" id="inputPhoneNum" placeholder="Enter contact number">
         </div>
       </form>
     </div>
@@ -141,7 +141,7 @@
     <br>
   <div align="left">
   <form>
-  <input type="checkbox" name="Yes" value="Yes"><strong> OK to enter if no one home</strong> <br /> <br />
+  <input type="checkbox" id="yesEnter" name="yesEnter" value="Yes"><strong> OK to enter if no one home</strong> <br /> <br />
   <input type="checkbox" name="No" value="No"><strong> I will call to schedule</strong>  
   </form>
 </div>
