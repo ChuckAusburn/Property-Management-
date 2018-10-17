@@ -1,24 +1,38 @@
 /* Navbar Items */
 
 .navbar-light {
-    background-color: #ffffff;
+    background-color: #2482a7;
+}
+
+.navbar-brand {
+    background-color: #1865ad
+}
+
+p {
+    text-align: center;
+    
+}
+
+.titleheader {
+    background-color: #1865ad
 }
 
 .navbar {
     padding: 0;
+    background-color: #1865ad;
 }
 
 .container {
     padding-left: 0px;
     padding-right: 0px;
-}
+     }
 
 
 
 body {
-    background-image: url(../images/bananas.png);
+    
     margin-bottom: 60px;
-
+    
 }
 
 .mainheaderleft {
@@ -36,6 +50,8 @@ body {
     border-bottom: 2px solid #c5c5c5;
     width: auto;
 }
+
+
 
 /* Body Paragraph */
 .body {
@@ -145,7 +161,6 @@ html {
 }
 
 
-
 .imgcontainer {
     position: relative;
 }
@@ -174,4 +189,11 @@ html {
     }
     .rowmargin {
     margin-bottom: 0%;
+}
+}
+
+#logo   {
+
+    text-align: center;
+
 }
