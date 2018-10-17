@@ -77,7 +77,7 @@
 
     <div class="row">
       <div class="col-lg-12">
-        <form id="contact-form">
+        <form id="contact-form" method="post">
 
           <div class="messages"></div>
 
@@ -95,8 +95,8 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="form_email">Email *</label>
-                  <input id="form_email" type="email" name="email" class="form-control" placeholder="" required="required"
-                    data-error="Valid email is required." disabled>
+                  <input id="form_email" type="text" name="to_email" class="form-control" placeholder="" required="required"
+                    data-error="Valid email is required.">
                   <div class="help-block with-errors"></div>
                 </div>
               </div>
@@ -104,16 +104,35 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="form_message">Comment *</label>
-                  <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4"
+                  <label for="form_subject">Subject *</label>
+                  <input id="form_subject" type="text" name="subject" class="form-control" placeholder="Enter Subject"
+                    required="required" data-error="Subject is required.">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="form_message">Message *</label>
+                  <textarea id="form_message" name="body" class="form-control" placeholder="Message for issuer" rows="4"
                     required="required" data-error="Please, leave us a message."></textarea>
                   <div class="help-block with-errors"></div>
                 </div>
               </div>
-              <div class="text-center">
-                <button class="btn btn-default" type="submit" id="email-submit-btn" value="Send">
-                  Save
-                </button>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                  <button class="btn btn-default" type="submit" id="email-submit-btn" value="Send">
+                    Send & Save Message
+                  </button>
+              </div>
+              <br><br>
+              <div class="col-md-2">
+                <div class="form-check checkbox">
+                  <input type="checkbox" class="form-check-input" id="checkbox">
+                  <label class="form-check-label" for="checkbox"> Send Email</label>
+                </div>
               </div>
             </div>
           </div>
@@ -136,6 +155,12 @@
     crossorigin="anonymous"></script>
   <!-- Link to Moment.js should go here -->
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+        emailjs.init("user_rJiOFmAnMYDqcmwyIHGLD");
+    })();
+  </script>
 
   <!-- Script -->
   <script type="text/javascript">
@@ -274,6 +299,9 @@
 
       $('#contact-form').submit(function (e) {
 
+      // save record
+        e.preventDefault();
+
         var row_val = $("#form_message").attr('row_val')
         row_val = parseInt(row_val)
 
@@ -287,14 +315,28 @@
         });
 
         $("#form_message").val("")
+      
+      if ($("#checkbox").is(':checked')) {
+      // email record
+        // Change to your service ID, or keep using the default service
+        var myform = $("form#contact-form");
+        var service_id = "default_service";
+        var template_id = "trackeremailer";
 
-        e.preventDefault();
-
-
+        myform.find("button").text("Sending...");
+        emailjs.sendForm(service_id,template_id,myform[0])
+          .then(function(){ 
+            alert("Sent!");
+            myform.find("button").text("Send");
+          }, function(err) {
+            alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+            myform.find("button").text("Send");
+          });
+        return false;
+      };
 
 
       });
-
 
 
     });
