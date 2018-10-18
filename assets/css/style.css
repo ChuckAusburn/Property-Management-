@@ -1,177 +1,39 @@
-/* Navbar Items */
-
-.navbar-light {
-    background-color: #2482a7;
+#map {
+    width: 40em;
+    height: 200px;
 }
 
-.navbar-brand {
-    background-color: #1865ad
+#managerinfo {
+    width: 40em;
+    height: auto;
 }
 
-p {
-    text-align: center;
-    
+.mapcard {
+    width: 40em;
 }
 
-.titleheader {
-    background-color: #1865ad
-}
-
-.navbar {
-    padding: 0;
-    background-color: #1865ad;
+.center-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.2em;
 }
 
 .container {
-    padding-left: 0px;
-    padding-right: 0px;
-     }
+    padding-top: 1.2em;
+}
+
+.tenant-card {
+    width: 100%;
+}
 
 body {
+    background-image: url("https://media-cdn.tripadvisor.com/media/photo-w/11/d8/a6/ca/santa-monica-pier-at.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     
-    margin-bottom: 60px;
-    
-}
-
-.mainheaderleft {
-    border: 1px solid #cccccc;
-    font-family: 'Georgia', Times, Times New Roman, serif;
-    color: white !important;
-    background: #4aaaa5;
-    font-size: 30px;
-    margin: 0px;
-    padding: 20px;
-}
-
-.parentheader {
-    background: #ffffff;
-    border-bottom: 2px solid #c5c5c5;
-    width: auto;
-}
-
-
-
-/* Body Paragraph */
-.body {
-    border: 1px solid;
-    border-color: #dddddd; 
-    background-color: #ffffff;
-    margin-top: 35px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 2%;
-}
-
-.bodyheader {
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border-bottom: 2px solid #d8d8d8;
-    font-family: 'Georgia', Times, Times New Roman, serif;
-    font-size: 30px;
-    color: #777777;
-}
-
-.imagefloat {
-    float: left;
-    width: 20%;
-    height: auto;
-    padding-right: 3%;
-    padding-top: 1em;
-}
-
-.footer {
-    background: #666666;
-    border-top: 5px solid #41a09b;
-    padding-top: 1%;
-    text-align: center;
-    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-    color: #b2a795;
-    font-size: 10px;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-}
-
-.footertext {
-    margin-bottom: 0;
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-.bodyparagraphformat {
-    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-    color: #777777;
-    margin-bottom: 0px;
-    margin-top: 1em;
-}
-
-.contactinputtext {
-    display:flex;
-    flex-direction:row
-}
-
-.inputflex {
-    flex: 1;
-    border: 1px solid;
-    border-color: #dddddd; 
-    background-color: #ffffff;
-}
-
-.textareadimensions {
-    width: 100%;
-    height: 150px;
-    border: 1px solid;
-    border-color: #dddddd; 
-    background-color: #ffffff;
-}
-
-.submitflex { 
-    display: flex; 
-    justify-content: space-between;
-    width: 200px;
-  }
-
-.submitbutton {
-    border: 1px solid #cccccc;
-    font-family: 'Georgia', Times, Times New Roman, serif;
-    color: white;
-    background: #4aaaa5;
-    padding-left: 1em;
-    padding-top: .5em;
-    padding-bottom: .5em;
-    padding-right: 1em;
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
-
-.randomimage {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.rowmargin {
-    margin-bottom: 2%;
-}
-
-.imgcontainer {
-    position: relative;
-}
-
-/* Responsiveness */
-@media only screen and (max-width: 991px) {
-    .randomimage {
-    margin-bottom: 2%;
-    }
-    .rowmargin {
-    margin-bottom: 0%;
-}
-}
-
-#logo   {
-
-    text-align: center;
-
-}
+ }
+ 
+ .container {
+     opacity: .95;
+ }

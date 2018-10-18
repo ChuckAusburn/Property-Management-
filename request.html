@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Property-Management-Request-Form`</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Linking CSS Reset File -->
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <!-- Linking CSS Style File -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src ="assets/request.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhFk-q7bicA0ApJ7y3hNc2uLMvYnDre1w"></script>
+  <title>Property-Management-Request-Form`</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Linking CSS Reset File -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <!-- Linking CSS Style File -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhFk-q7bicA0ApJ7y3hNc2uLMvYnDre1w"></script>
 </head>
 
 <body>
 
-<div class="parentheader">
+  <div class="parentheader">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#";><strong>EZIE ISAAC PROPERTIES</strong></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#" ;><strong>EZIE ISAAC PROPERTIES</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -32,183 +34,117 @@
         </div>
       </div>
     </nav>
-</div>
-
-<br>
- 
-
-<div class="container">
-  <div class="row">
-    <div class="titleheader">
-    <p style= "font-size:30px";><strong >Tenant Maintenance Request</strong></p>
-    </div>
   </div>
 
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="row">
-        <form>
-          <div class="form-group">
-            <label for="tenantName"><strong>Tenant Name</strong></label>
-            <input type="text" class="form-control" id="tenantName" aria-describedby="tenantName" placeholder="Enter Tenant Name">
-            <small id="tenantNameID" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-            <label for="tenantPhone"><strong>Tenant Phone</strong></label>
-            <input type="tel" class="form-control" id="tenantPhone" aria-describedby="tenantPhone" placeholder="Enter Tenant Phone">
-            <small id="tenantPhoneID" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-              <label for="tenantEmail"><strong>Email Address</strong></label>
-              <input type="email" class="form-control" id="tenantEmail" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="row">
-              <div class="col">
+  <div class="container">
+    <form>
+    <div class="row form-input">
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="card tenant-card">
+            <div class="card-header">
+              Tenant Details
+            </div>
+            <div class="card-body">
+              <div>
                 <div class="form-group">
-                  <label for="selectAddress"><strong>Select Address</strong></label>
-                  <select class="form-control" id="selectAddress"> 
-                    <option disabled selected value="">Please select value</option>
-                  </select>
+                  <label for="tenantName"><strong>Tenant Name</strong></label>
+                  <input type="text" class="form-control" id="tenantName" aria-describedby="tenantName" placeholder="Enter Tenant Name"
+                    required>
+                  <small id="tenantNameID" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                  <label for="tenantPhone"><strong>Tenant Phone</strong></label>
+                  <input type="tel" class="form-control" id="tenantPhone" aria-describedby="tenantPhone" placeholder="Enter Tenant Phone"
+                    required>
+                  <small id="tenantPhoneID" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                  <label for="tenantEmail"><strong>Email Address</strong></label>
+                  <input type="email" class="form-control" id="tenantEmail" aria-describedby="emailHelp" placeholder="Enter email"
+                    required>
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="selectAddress"><strong>Select Address</strong></label>
+                      <select class="form-control" id="selectAddress" required>
+                        <option disabled selected value="">Please select an address</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class=row>
+                  <div class="col">
+                    <label for="unitNumber"><strong>Unit Number</strong></label>
+                    <input type="number" class="form-control" id="unitNumber" aria-describedby="unitNumber" placeholder="Unit Number"
+                      required>
+                    <small id="unitNumber" class="form-text text-muted"></small>
+                  </div>
                 </div>
               </div>
+            </div>
           </div>
-          <div class = row>
-              <div class="col">
-                <label for="unitNumber"><strong>Unit Number</strong></label>
-                <input type="number" class="form-control" id="unitNumber" aria-describedby="unitNumber" placeholder="Unit Number">
-                <small id="unitNumber" class="form-text text-muted"></small>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header">
+            Issue Details
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="form-group">
+                <label for="form_message">Description of Issue</label>
+                <textarea id="form_message" name="body" class="form-control" placeholder="Please describe your issue" required></textarea>
+                <div class="help-block with-errors"></div>
+              </div>
+              <div class="form-group">
+                <label for="selectissue"><strong>Select issue</strong></label>
+                <select class="form-control" id="selectissue" required>
+                  <option disabled selected value="">Please select an issue</option>
+                </select>
+              </div>
+              <div class="form-check checkbox">
+                <input type="checkbox" class="form-check-input" id="checkbox">
+                <label class="form-check-label" for="checkbox">OK to Enter Home</label>
+              </div>
+              <div>
+                <button class="btn btn-primary" type="submit" id="submit-request-btn" value="Send">
+                  Submit Request
+                </button>
               </div>
             </div>
-        </form>
-      </div>
-      <div class="row">
-        <div class="card" style="width: 600px;">
-          <div style="width:600px;height:300px" id="map"></div>
-          <div style="width:600px;height:300px" class="card-body" id= "managerInfo">
           </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-6">
-      <div class="card">
-        <div class="card-header">
-          Issue Details
+    <div class="row center-align">
+      <div class="collapse">
+      <div class="card mapcard">
+        <div id="map"></div>
+        <div class="card-body" id="managerInfo">
         </div>
-        <div class="card-body">
-          <div class="form-group">
-            <label for="form_message">Description of Issue</label>
-            <textarea id="form_message" name="body" class="form-control" placeholder="Please describe your issue"></textarea>
-            <div class="help-block with-errors"></div>
-          </div>
-            <div class="form-group">
-              <label for="selectissue"><strong>Select issue</strong></label>
-              <select class="form-control" id="selectissue"> 
-                <option disabled selected value="">Please select value</option>
-              </select>
-            </div>
-          <div class="form-check checkbox">
-            <input type="checkbox" class="form-check-input" id="checkbox">
-            <label class="form-check-label" for="checkbox">OK to Enter Home</label>
-          </div>
-          <div>
-            <button class="btn btn-primary" type="submit" id="submit-request-btn" value="Send">
-              Submit Request
-            </button>
-          </div>
       </div>
     </div>
+    </div>
+  </form>
   </div>
-  
-  </div>
 
 
 
-<!-- LINK TO FIREBASE GOES HERE -->
-<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+
+  <!-- LINK TO FIREBASE GOES HERE -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
   crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<!-- Script -->
-<!-- <script type="text/javascript">
-
-      $(document).ready(function () {
-
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyBXxt23fhtW6YNk8iu_J2m9qg_ivp58RxY",
-          authDomain: "property-management-aa43d.firebaseapp.com",
-          databaseURL: "https://property-management-aa43d.firebaseio.com",
-          projectId: "property-management-aa43d",
-          storageBucket: "property-management-aa43d.appspot.com",
-          messagingSenderId: "272832416557"
-        };
-
-        firebase.initializeApp(config);
-
-        // Create a variable to reference the database.
-        var database = firebase.database();
-
-$(document).on('click', '#submit-request-btn', function (event) {
-
-event.preventDefault();
-
-var address = $("#selectAddress").val().trim();
-var createdDate = 82739428;
-var issueID = 1;
-var issueType = $("#issueSelect").val();
-var issuerEmail = $("#tenantEmail").val().trim();
-var issuerName = $("#tenantName").val().trim();
-var unit = $("#unitNumber").val().trim();
-var enterHome = $("#checkbox").val().trim();
-var issuerPhone = $("#tenantPhone").val().trim();
-
-
-// logic to pull latest ID and increment by 1
-  database.ref('/issue_request').on("child_added", function (snapshot) {
-    // storing the snapshot.val() in a variable for convenience
-    var sv = snapshot.val();
-
-    issueID = sv.fb_issueID;
-
-    issueID++
-
-  }, function (errorObject) {
-    console.log("Errors handled: " + errorObject.code);
-  });
-
-
-  // Code for handling the push
-  database.ref('/issue_request').push({
-    fb_address: address,
-    fb_createdDate: createdDate,
-    fb_issueID: issueID,
-    fb_issueType: issueType,
-    fb_issuerEmail: issuerEmail,
-    fb_issuerName: issuerName,
-    fb_unit: unit,
-    fb_enterHome: enterHome,
-    fb_issuerPhone: issuerPhone
-  });
-
-  //Clear text on submission
-  $("#selectAddress").val("");
-  $("#issueSelect").val("");
-  $("#issuerEmail").val("");
-  $("#issuerName").val("");
-  $("#unitNumber").val("");
-  $("#checkbox").val("");
-
-
-
-});
-
-});
-
-</script>
-
-</body>
-</html>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+  <script src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="assets/request.js"></script>
