@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyBXxt23fhtW6YNk8iu_J2m9qg_ivp58RxY",
@@ -12,31 +14,35 @@ $(document).ready(function() {
 
     var database = firebase.database();
  
+    $('.container').submit(function (event) {
 
-    $(document).on('click', '#submit-request-btn', function (event) {
-        event.preventDefault();   
+        // logic to pull latest ID and increment by 1
+        event.preventDefault(); 
+
+        var issueID =  1;
+        
+        database.ref('/issue_request').on("child_added", function (snapshot) {
+            // storing the snapshot.val() in a variable for convenience
+            var sv = snapshot.val();        
+            issueID = sv.fb_issueID;
+            issueID++
+          }, function (errorObject) {
+            console.log("Errors handled: " + errorObject.code);
+          });
+        
+        
+        
+          
         var address = $("#selectAddress").val().trim();
-        var createdDate = 82739428;
-        var issueID = 4;
+        var createdDate = firebase.database.ServerValue.TIMESTAMP;
         var issueType = $("#selectissue").val();
         var issuerEmail = $("#tenantEmail").val().trim();
         var issuerName = $("#tenantName").val().trim();
-        var message = $("#form_message").val().trim();
+        var message = "SENDER MESSAGE: " + $("#form_message").val().trim();
         var unit = $("#unitNumber").val().trim();
-        var enterHome = $("#checkbox").val().trim();
+        var enterHome = $("#checkbox").is(':checked') ? "true" : "false";
         var issuerPhone = $("#tenantPhone").val().trim();
-        
-        // logic to pull latest ID and increment by 1
-        //   database.ref('/issue_request').on("child_added", function (snapshot) {
-            // storing the snapshot.val() in a variable for convenience
-        //     var sv = snapshot.val();        
-        //     issueID = sv.fb_issueID;
-        
-        //     issueID++
-        
-        //   }, function (errorObject) {
-        //     console.log("Errors handled: " + errorObject.code);
-        //   });
+
         var postData = {
             fb_address: address,
             fb_createdDate: createdDate,
@@ -65,6 +71,8 @@ $(document).ready(function() {
           $("#checkbox").val("");
         $("#form_message").val("");
         $("#tenantPhone").val("");
+
+        return false
     });
 
 
@@ -91,6 +99,8 @@ $(document).ready(function() {
 
 
     $(document).on('change', '#selectAddress', function () {
+        $('.collapse').collapse('show')
+
         var selectedaddress  = $(this).find("option:selected").attr('addressval');
         var fulladdress = $(this).find("option:selected").attr('fulladdressval');
         console.log(selectedaddress)
@@ -148,7 +158,7 @@ $(document).ready(function() {
         var uluru = {lat: lata, lng: lnga};
         // The map, centered at Uluru
         var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 10, center: uluru});
+            document.getElementById('map'), {zoom: 15, center: uluru});
         // The marker, positioned at Uluru
         var marker = new google.maps.Marker({position: uluru, map: map});
         }
