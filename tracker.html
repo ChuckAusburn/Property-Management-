@@ -117,7 +117,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="form_message">Message *</label>
-                  <textarea id="form_message" name="body" class="form-control" placeholder="Message for issuer" rows="4"
+                  <textarea id="form_message" type="text" name="body_text" class="form-control" placeholder="Message for issuer" rows="4"
                     required="required" data-error="Please, leave us a message."></textarea>
                   <div class="help-block with-errors"></div>
                 </div>
@@ -316,8 +316,6 @@
             fb_message: $("#form_message").val()
           })
         });
-
-        $("#form_message").val("")
       
       if ($("#checkbox").is(':checked')) {
       // email record
@@ -337,6 +335,8 @@
           });
         return false;
       };
+
+      $("#form_message").val("")
 
 
       });
