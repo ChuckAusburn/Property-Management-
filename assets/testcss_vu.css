@@ -64,7 +64,7 @@ button:after {
     width: 0;
 }
 #map {
-    width: 40em;
+    width: 30em;
     height: 200px;
 }
 
@@ -73,9 +73,6 @@ button:after {
     height: auto;
 }
 
-.mapcard {
-    width: 40em;
-}
 
 .center-align {
     display: flex;
@@ -119,4 +116,18 @@ body {
 }
 #checkbox {
     display: inline-block;
+}
+.navbar-brand{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 23px;
+    margin-left: 20%;
+    background-color: #187dbc;
+    padding: 14px 10px 0px 10px;
+}
+.navbar {
+    padding: 0px;
+    border: 0px;
+}
+#navbarNav {
+    margin-right: 20%;
 }
