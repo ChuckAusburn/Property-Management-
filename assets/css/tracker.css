@@ -11,3 +11,31 @@
 .checkbox label, .radio label {
     padding-left: 0px !important;
 }
+
+.parentheader {
+    background: #f8f9fa!important;
+    border-bottom: 2px solid #c5c5c5;
+    width: auto;
+}
+
+.navbar-brand {
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+}
+
+.nav-item {
+    font-size: 14px;
+}
+
+.pagination {
+    float: right;
+}
+
+.navbar {
+    margin-bottom: 0px;
+    padding: 0rem 0rem;
+    min-height: 0px;
+}
+
+
