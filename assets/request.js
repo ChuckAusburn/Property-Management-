@@ -111,13 +111,35 @@ $(document).ready(function() {
             console.log(snap.fb_managerNameInput)
             $("#managerInfo").empty();
             $("#managerInfo").append(
-            "<h5 class='card-title'> Property Manager Details </h5>" +
-            "<p class='card-text'>Manager Name: " + snap.fb_managerNameInput + "</p>" +
-            "<p class='card-text'>Manager Number: " + snap.fb_telInput + "</p>" +
-            "<p class='card-text'>Manager Email: " + snap.fb_emailInput + "</p>" +
-            "<p class='card-text'>Property Address: " + snap.fb_addressInput + "</p>" +
-            "<p class='card-text'>City, State: " + snap.fb_cityInput + ", " + snap.fb_stateInput + "</p>" +
-            "<p class='card-text'>Zip Code: " + snap.fb_zipInput + "</p>"
+            "<table class='table'>" +
+                "<tr>" +
+                    "<th class='primary'> <strong>PROPERTY MANAGER DETAILS</strong> </th>" +
+                "</tr>" +
+                "<tr>" +
+                    "<td class='info'> <strong>Manager Name:</strong></td>" + 
+                    "<td>" + snap.fb_managerNameInput + "</td>" +
+                "</tr>" +
+                "<tr>" +
+                    "<td class='info'> <strong>Manager Number:</strong></td> " + 
+                    "<td>" + snap.fb_telInput + "</td>" +
+                "</tr>" +
+                "<tr>" +
+                    "<td class='info'> <strong>Manager Email:</strong></td> " + 
+                    "<td>" + snap.fb_emailInput + "</td>" +
+                "</tr>" +
+                "<tr>" +
+                    "<td class='info'> <strong>Property Address:</strong></td> " + 
+                    "<td>" + snap.fb_addressInput + "</td>" +
+                "</tr>" +
+                "<tr>" +
+                    "<td class='info'> <strong>City, State:</strong></td> " + 
+                    "<td>" + snap.fb_cityInput + ", " + snap.fb_stateInput + "</td>" +
+                "</tr>" +
+                "<tr>" +
+                    "<td class='info'> <strong>Zip Code:</strong></td> " + 
+                    "<td>" + snap.fb_zipInput + "</td>" +
+                "</tr>" +
+            "</table>"
         );
         });
 
