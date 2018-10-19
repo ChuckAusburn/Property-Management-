@@ -64,7 +64,7 @@ button:after {
     width: 0;
 }
 #map {
-    width: 30em;
+    width: 100%;
     height: 200px;
 }
 
@@ -130,4 +130,11 @@ body {
 }
 #navbarNav {
     margin-right: 20%;
+}
+#table_vu{
+    border: 2px blue solid;
+}
+#managerinfobox {
+    margin: 20px auto;
+    padding-left: 10px;
 }

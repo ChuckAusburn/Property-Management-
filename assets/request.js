@@ -113,7 +113,7 @@ $(document).ready(function() {
             console.log(snap.fb_managerNameInput)
             $("#managerInfo").empty();
             $("#managerInfo").append(
-            "<table class='table'>" +
+            "<table class='table table_vu'>" +
                 "<tr>" +
                     "<td class='info'> <strong>Manager Name:</strong></td>" + 
                     "<td>" + snap.fb_managerNameInput + "</td>" +
