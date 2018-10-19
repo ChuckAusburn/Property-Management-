@@ -13,24 +13,26 @@ $(document).ready(function() {
     firebase.initializeApp(config);
 
     var database = firebase.database();
+
+    var issueID = 0;
+
+    database.ref('/issue_request').on("child_added", function (snapshot) {
+        // storing the snapshot.val() in a variable for convenience
+        var sv = snapshot.val();        
+        issueID = sv.fb_issueID;
+    }, function (errorObject) {
+        console.log("Errors handled: " + errorObject.code);
+      });
+
+    
  
     $('.container').submit(function (event) {
 
         // logic to pull latest ID and increment by 1
-        event.preventDefault(); 
+        event.preventDefault();         
+        
+        issueID++
 
-        var issueID =  1;
-        
-        database.ref('/issue_request').on("child_added", function (snapshot) {
-            // storing the snapshot.val() in a variable for convenience
-            var sv = snapshot.val();        
-            issueID = sv.fb_issueID;
-            issueID++
-          }, function (errorObject) {
-            console.log("Errors handled: " + errorObject.code);
-          });
-        
-        
         
           
         var address = $("#selectAddress").val().trim();
