@@ -115,9 +115,6 @@ $(document).ready(function() {
             $("#managerInfo").append(
             "<table class='table'>" +
                 "<tr>" +
-                    "<th class='primary'> <strong>PROPERTY MANAGER DETAILS</strong> </th>" +
-                "</tr>" +
-                "<tr>" +
                     "<td class='info'> <strong>Manager Name:</strong></td>" + 
                     "<td>" + snap.fb_managerNameInput + "</td>" +
                 "</tr>" +
