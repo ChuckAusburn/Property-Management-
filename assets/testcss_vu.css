@@ -1,59 +1,83 @@
 .card-header-vu {
     background: linear-gradient(to bottom, #4eb5e5 0%,#389ed5 100%); /* W3C */
-  border: none;
-  border-radius: 5px;
-  position: relative;
-  border-bottom: 4px solid #2b8bc6;
-  color: #fbfbfb;
-  font-weight: 600;
-  font-family: 'Open Sans', sans-serif;
-  text-shadow: 1px 1px 1px rgba(0,0,0,.4);
-  font-size: 15px;
-  text-align: left;
-  text-indent: 5px;
-  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
+    border: none;
+    border-radius: 0px;
+    position: relative;
+    border-bottom: 2px solid #2b8bc6;
+    color: #fbfbfb;
+    font-weight: 600;
+    font-family: 'Krub', sans-serif;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+    font-size: 15px;
+    text-align: left;
+    text-indent: 5px;
+    box-shadow: 0px 2px 0px 0px rgba(0,0,0,.2);
+    padding: 5px;
 }
-button {
-  width: 130px;
-  height: 40px;
-  background: linear-gradient(to bottom, #4eb5e5 0%,#389ed5 100%); /* W3C */
-  border: none;
-  border-radius: 5px;
-  position: relative;
-  border-bottom: 4px solid #2b8bc6;
-  color: #fbfbfb;
-  font-weight: 600;
-  font-family: 'Open Sans', sans-serif;
-  text-shadow: 1px 1px 1px rgba(0,0,0,.4);
-  font-size: 15px;
-  text-align: left;
-  text-indent: 5px;
-  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
-  /* cursor: pointer; */
+.button1 {
+    width: 130px;
+    height: 40px;
+    background: linear-gradient(to bottom, #4eb5e5 0%,#389ed5 100%); /* W3C */
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    border-bottom: 4px solid #2b8bc6;
+    color: #fbfbfb;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+    font-size: 15px;
+    text-align: left;
+    text-indent: 5px;
+    box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
+    /* cursor: pointer; */
 
 /* Just for presentation */  
-  display: block;
-  margin-bottom: 20px;
+    display: block;
+    margin-left: 33px;
+    margin-bottom: 5px;
 }
-button:active {
-  box-shadow: 0px 2px 0px 0px rgba(0,0,0,.2);
-  top: 1px;
+.button2 {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to bottom, #4eb5e5 0%,#389ed5 100%); /* W3C */
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    border-bottom: 4px solid #2b8bc6;
+    color: #fbfbfb;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+    font-size: 15px;
+    text-align: left;
+    text-indent: 5px;
+    box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
+    /* cursor: pointer; */
+
+/* Just for presentation */  
+    display: block;
+    margin-bottom: opx;
+}
+.button1:active {
+    box-shadow: 0px 2px 0px 0px rgba(0,0,0,.2);
+    top: 1px;
 }
 
-button:after {
-  content: "";
-  width: 0;
-  height: 0;
-  display: block;
-  border-top: 20px solid #187dbc;
-  border-bottom: 20px solid #187dbc;
-  border-left: 16px solid transparent;
-  border-right: 20px solid #187dbc;
-  position: absolute;
-  opacity: 0.6; 
-  right: 0;
-  top: 0;
-  border-radius: 0 5px 5px 0;  
+.button1:after {
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 20px solid #187dbc;
+    border-bottom: 20px solid #187dbc;
+    border-left: 16px solid transparent;
+    border-right: 20px solid #187dbc;
+    position: absolute;
+    opacity: 0.6; 
+    right: 0;
+    top: 0;
+    border-radius: 0 5px 5px 0;  
 }
 .filtersubmit {
     position: relative;
@@ -64,14 +88,13 @@ button:after {
     width: 0;
 }
 #map {
-    width: 100%;
+    width: 90%;
     height: 200px;
+    margin: 0px 63px 10px 33px;
+    padding:0px;
 }
 
-#managerinfo {
-    width: 40em;
-    height: auto;
-}
+
 
 
 .center-align {
@@ -81,13 +104,10 @@ button:after {
     padding-top: 1.2em;
 }
 
-.container {
-    padding-top: 1.2em;
-}
 
-.tenant-card {
+/* .tenant-card {
     width: 100%;
-}
+} */
 
 body {
     background-image: url("https://media-cdn.tripadvisor.com/media/photo-w/11/d8/a6/ca/santa-monica-pier-at.jpg");
@@ -96,19 +116,25 @@ body {
     
  }
  
- .container {
+ /* .container {
      opacity: .95;
- }
+ } */
 .form-group {
     margin-left: 35px;
+    margin-right: 10px;
 }
 .inputfield_vu{
     height: 25px;
     width:100%;
+    color: rgb(105, 105, 105);
+}
+.propertyselect {
+    margin-left: 13px;
 }
 #techicon {
     width: 80%;
     margin-top: 30px;
+    margin-left: 33px;
 }
 #form_message{
     height: 120px;
@@ -116,25 +142,65 @@ body {
 }
 #checkbox {
     display: inline-block;
+    zoom: 1.5;
+    position: relative;
+    top: 3px;
 }
-.navbar-brand{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 23px;
-    margin-left: 20%;
-    background-color: #187dbc;
-    padding: 14px 10px 0px 10px;
+.form_vu{
+    background: rgba(255, 255, 255, 0.8);
+    margin-top: 40px;
+    min-width: 600px;
 }
-.navbar {
-    padding: 0px;
-    border: 0px;
+#managerinfobox {
+    margin: 7px auto 0px;
+    padding-left: 15px;
 }
-#navbarNav {
-    margin-right: 20%;
+/* table.table_vu tbody tr td#info {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    line-height: 0.7;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+} */
+td {
+    padding:0px 4px;
+}
+#managerInfo {
+    font-size: 0.9em;
+    width: 100%;
+    position: relative;
+    /* left: -20px; */
+    line-height: 1.1;
+    color: rgb(90, 88, 88);
+    margin-bottom: 15px;
 }
 #table_vu{
     border: 2px blue solid;
 }
-#managerinfobox {
-    margin: 20px auto;
-    padding-left: 10px;
+.text_prompt{
+    font-family: 'Krub', sans-serif;
+    color:#187dbc;
+    font-size: 1.1em;
+}
+.manager_name {
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 4px;
+}
+.prop_manager_container{
+    position: relative;
+    left:-10px;
+}
+@media only screen and (min-width:0) and (max-width: 576px) { 
+    #techicon {
+        width: 20%;
+        margin-left: 33px;;
+    }
+    .prop_manager_container{
+        left: 33px;
+    }
+
 }
