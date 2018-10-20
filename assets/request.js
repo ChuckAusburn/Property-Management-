@@ -113,31 +113,28 @@ $(document).ready(function() {
             console.log(snap.fb_managerNameInput)
             $("#managerInfo").empty();
             $("#managerInfo").append(
-            "<table class='table table_vu'>" +
+            "<p class='manager_name'>" + snap.fb_managerNameInput+ "</p>"+
+            "<table class='table_vu'>" +
                 "<tr>" +
-                    "<td class='info'> <strong>Manager Name:</strong></td>" + 
-                    "<td>" + snap.fb_managerNameInput + "</td>" +
+                    "<td class='info'><i class='fas fa-phone'></i></td> " + 
+                    "<td class='info'>" + snap.fb_telInput + "</td>" +
                 "</tr>" +
                 "<tr>" +
-                    "<td class='info'> <strong>Manager Number:</strong></td> " + 
-                    "<td>" + snap.fb_telInput + "</td>" +
+                    "<td class='info'> <i class='far fa-envelope'></i></td> " + 
+                    "<td class='info'>" + snap.fb_emailInput + "</td>" +
                 "</tr>" +
-                "<tr>" +
-                    "<td class='info'> <strong>Manager Email:</strong></td> " + 
-                    "<td>" + snap.fb_emailInput + "</td>" +
-                "</tr>" +
-                "<tr>" +
-                    "<td class='info'> <strong>Property Address:</strong></td> " + 
-                    "<td>" + snap.fb_addressInput + "</td>" +
-                "</tr>" +
-                "<tr>" +
-                    "<td class='info'> <strong>City, State:</strong></td> " + 
-                    "<td>" + snap.fb_cityInput + ", " + snap.fb_stateInput + "</td>" +
-                "</tr>" +
-                "<tr>" +
-                    "<td class='info'> <strong>Zip Code:</strong></td> " + 
-                    "<td>" + snap.fb_zipInput + "</td>" +
-                "</tr>" +
+                // "<tr>" +
+                //     "<td class='info'> <strong>Property Address:</strong></td> " + 
+                //     "<td>" + snap.fb_addressInput + "</td>" +
+                // "</tr>" +
+                // "<tr>" +
+                //     "<td class='info'> <strong>City, State:</strong></td> " + 
+                //     "<td>" + snap.fb_cityInput + ", " + snap.fb_stateInput + "</td>" +
+                // "</tr>" +
+                // "<tr>" +
+                //     "<td class='info'> <strong>Zip Code:</strong></td> " + 
+                //     "<td>" + snap.fb_zipInput + "</td>" +
+                // "</tr>" +
             "</table>"
         );
         });
@@ -173,16 +170,32 @@ $(document).ready(function() {
             console.log("inside"+lata+" "+lnga);
         });
 
-        // Initialize and add the map
+        var map;
         function initMap() {
         // The location of Uluru
         var uluru = {lat: lata, lng: lnga};
         // The map, centered at Uluru
         var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 15, center: uluru});
+            document.getElementById('map'), {
+                zoom: 13, 
+                center: uluru,
+                disableDefaultUI: true,                
+                });
+
         // The marker, positioned at Uluru
         var marker = new google.maps.Marker({position: uluru, map: map});
+        initZoomControl(map);
         }
+        function initZoomControl(map) {
+            document.querySelector('.zoom-control-in').onclick = function() {
+                map.setZoom(map.getZoom() + 1);
+            };
+            document.querySelector('.zoom-control-out').onclick = function() {
+                map.setZoom(map.getZoom() - 1);
+            };
+            map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(
+                document.querySelector('.zoom-control'));
+        }        
 
         setTimeout(initMap, 560);
     });
