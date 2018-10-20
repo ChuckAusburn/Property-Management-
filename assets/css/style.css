@@ -26,13 +26,6 @@
 .tenant-card {
     width: 100%;
 }
-
-body {
-    background-image: url("https://media-cdn.tripadvisor.com/media/photo-w/11/d8/a6/ca/santa-monica-pier-at.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    
- }
  
  .container {
      opacity: .95;
