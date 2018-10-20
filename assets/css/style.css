@@ -1,3 +1,11 @@
+html { 
+    background: url("../images/businessTemplate.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 #map {
     width: 30em;
     height: 200px;
@@ -27,12 +35,12 @@
     width: 100%;
 }
 
-body {
+/* body {
     background-image: url("https://media-cdn.tripadvisor.com/media/photo-w/11/d8/a6/ca/santa-monica-pier-at.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     
- }
+ } */
  
  .container {
      opacity: .95;
